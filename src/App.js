@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import './style.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.setstate = {
+    this.state = {
       inc: 1,
       todosdata: [],
       loading: false,
@@ -14,25 +13,14 @@ class App extends Component {
     this.todoApicall = this.todoApicall.bind(this);
   }
 
-  componentDidMount() {
-    this.setState({
-      loading: false,
-    });
-  }
-
   todoApicall = () => {
-    fetch('https://jsonplaceholder.typicode.com/todos')
-      .then((response) => response.json)
-      .then((data) => {
-        this.setState(
-          {
-            todosdata: data,
-            loading: true,
-          },
-          () => {
-            console.log(this.state.loading);
-          }
-        );
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((res) => res.json())
+      .then((json) => {
+        console.log(json);
+        this.setState({
+          todosdata: json,
+        });
       });
   };
 
@@ -44,7 +32,6 @@ class App extends Component {
           <button onClick={this.todoApicall}>Call API</button>
           <button onClick={this.incrementMe}>Increment</button>
         </div>
-        <p>{this.state.loading}</p>
       </>
     );
   }
