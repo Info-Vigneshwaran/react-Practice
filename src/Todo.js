@@ -27,6 +27,14 @@ export default function Todo() {
     });
     setLists(new_list);
   };
+
+  const handleDone = (id) => {
+    let new_list = lists.map((x) => {
+      x.id === id ? { ...x, done: true } : x;
+      console.log(x);
+    });
+    // setLists(new_list);
+  };
   return (
     <div>
       <p>test</p>
@@ -34,7 +42,13 @@ export default function Todo() {
       <input type="button" onClick={handleClick} value="Add" />
       {lists.map((list) => (
         <div>
+          <input
+            type="checkbox"
+            onChange={() => handleDone(list.id)}
+            defaultChecked={list.done}
+          />
           {list.name}
+
           <input
             type="button"
             onClick={() => handleRemove(list.id)}
