@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
-const defaultList = [
-  { id: 1, name: 'test1', done: true },
-  { id: 2, name: 'test2', done: false },
-  { id: 3, name: 'test3', done: true },
-];
+import data from './data';
+
 export default function Todo() {
-  const [lists, setLists] = useState(defaultList);
+  const [lists, setLists] = useState(data);
   const [name, setName] = useState('');
   const handleChange = (e) => {
     e.preventDefault();
