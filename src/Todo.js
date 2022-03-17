@@ -29,11 +29,10 @@ export default function Todo() {
   };
 
   const handleDone = (id) => {
-    let new_list = lists.map((x) => {
-      x.id === id ? { ...x, done: true } : x;
-      console.log(x);
+    let new_list = lists.filter(function (list) {
+      return list.id == id ? { ...list, id: !list.done } : { ...list };
     });
-    // setLists(new_list);
+    setLists(new_list);
   };
   return (
     <div>
@@ -41,7 +40,7 @@ export default function Todo() {
       <input type="text" onChange={handleChange} value={name} />
       <input type="button" onClick={handleClick} value="Add" />
       {lists.map((list) => (
-        <div>
+        <div key={list.id}>
           <input
             type="checkbox"
             onChange={() => handleDone(list.id)}
