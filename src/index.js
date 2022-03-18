@@ -4,5 +4,6 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import Todo from './Todo';
 import Counter from './Counter';
+import CreateForm from './CreateForm';
 
-ReactDOM.render(<Counter />, document.getElementById('root'));
+ReactDOM.render(<CreateForm />, document.getElementById('root'));
