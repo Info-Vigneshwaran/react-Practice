@@ -2,6 +2,21 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 export default function Crud() {
   const [users, setUsers] = useState([]);
+  useEffect(async () => {
+    await axios
+      .get('https://jsonplaceholder.typicode.com/users')
+      .then((res) => {
+        setUsers(res.data);
+      });
+  }, []);
+
+  const handleRemove = (id) => {
+    let new_users = users.filter((user) => {
+      return user.id !== id;
+    });
+    setUsers(new_users);
+    console.log(new_users);
+  };
 
   return (
     <>
@@ -17,7 +32,11 @@ export default function Crud() {
               <td>{list.id}</td>
               <td>{list.name}</td>
               <td>
-                <input type="button" />
+                <input
+                  type="button"
+                  value="Remove"
+                  onClick={(e) => handleRemove(list.id)}
+                />
               </td>
             </tr>
           );
