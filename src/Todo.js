@@ -11,11 +11,9 @@ export default function Todo() {
   useEffect(() => {}, [lists]);
   const handleDone = (id) => {
     let new_list = lists.map((list) => {
-      console.log(!list.done);
       return list.id == id ? { ...list, done: !list.done } : { ...list };
     });
     setLists(new_list);
-    console.log(new_list);
   };
   const handleClick = () => {
     if (name != '') {
