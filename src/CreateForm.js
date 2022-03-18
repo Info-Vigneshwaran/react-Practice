@@ -2,11 +2,23 @@ import React, { useState, useEffect, useCallback } from 'react';
 
 export default function CreateForm() {
   const [user, setUser] = useState({ name: '', email: '' });
+  const [empty, setEmpty] = useState('');
   const handleUser = (e) => {
     setUser((prevUser) => {
       return { ...prevUser, [e.target.name]: e.target.value };
     });
+    setEmpty('test');
   };
+
+  useEffect(() => {
+    handleCheck();
+  }, [empty]);
+
+  useCallback(() => {
+    handleCheck();
+  }, [empty]);
+
+  const handleCheck = () => {};
   useEffect(() => {}, [user]);
   return (
     <>
