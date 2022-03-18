@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 export default function CreateForm() {
   const [user, setUser] = useState({ name: '', email: '' });
   const handleUser = (e) => {
-    setUser((preUser) => {
-      return { ...preUser, [e.target.name]: e.target.value };
+    setUser((prevUser) => {
+      return { ...prevUser, [e.target.name]: e.target.value };
     });
   };
   useEffect(() => {}, [user]);
@@ -14,8 +14,8 @@ export default function CreateForm() {
       <br />
       email: <input type="text" name="email" onChange={handleUser} />
       <h1>Created User</h1>
-      <p>Name : {user ? user.name : '---'}</p>
-      <p>Email : {user ? user.email : '---'}</p>
+      <p>Name : {user && user.name != '' ? user.name : '---'}</p>
+      <p>Email : {user && user.email != '' ? user.email : '---'}</p>
     </>
   );
 }
