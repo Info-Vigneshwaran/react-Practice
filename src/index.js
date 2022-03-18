@@ -5,5 +5,6 @@ import App from './App';
 import Todo from './Todo';
 import Counter from './Counter';
 import CreateForm from './CreateForm';
+import Crud from './Crud';
 
-ReactDOM.render(<CreateForm />, document.getElementById('root'));
+ReactDOM.render(<Crud />, document.getElementById('root'));
