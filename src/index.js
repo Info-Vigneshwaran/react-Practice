@@ -3,5 +3,6 @@ import ReactDOM from 'react-dom';
 
 import App from './App';
 import Todo from './Todo';
+import Counter from './Counter';
 
-ReactDOM.render(<Todo />, document.getElementById('root'));
+ReactDOM.render(<Counter />, document.getElementById('root'));
