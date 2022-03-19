@@ -18,8 +18,17 @@ export default function Crud() {
     console.log(new_users);
   };
 
+  const handleEdit = (id) => {
+    let new_user = users.find((user) => {
+      return user.id == id;
+    });
+  };
+
   return (
     <>
+      <input type="text" />
+      <input type="text" />
+      <input type="button" value="Add" onClick={(e) => handleRemove(list.id)} />
       <table>
         <tr>
           <th>Name</th>
@@ -36,6 +45,12 @@ export default function Crud() {
                   type="button"
                   value="Remove"
                   onClick={(e) => handleRemove(list.id)}
+                />
+
+                <input
+                  type="button"
+                  value="Edit"
+                  onClick={(e) => handleEdit(list.id)}
                 />
               </td>
             </tr>
