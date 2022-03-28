@@ -7,5 +7,6 @@ import Counter from './Counter';
 import CreateForm from './CreateForm';
 import Crud from './Crud';
 import Login from './Login';
+import Reducer from './Reducer';
 
-ReactDOM.render(<Login />, document.getElementById('root'));
+ReactDOM.render(<Reducer />, document.getElementById('root'));
