@@ -16,7 +16,7 @@ export default function Login() {
     } else {
       setLogin(false);
     }
-  });
+  }, []);
   const handleInput = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
