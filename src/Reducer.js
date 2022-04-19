@@ -17,7 +17,7 @@ export default function Reducer() {
     <>
       <p>Count {count}</p>
       <button onClick={() => dispatch({ type: 'increment' })}>increment</button>
-      <button onClick={() => dispatch({ type: 'decrement' })}>increment</button>
+      <button onClick={() => dispatch({ type: 'decrement' })}>decrement</button>
     </>
   );
 }
