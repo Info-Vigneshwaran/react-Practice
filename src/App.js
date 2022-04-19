@@ -14,14 +14,16 @@ class App extends Component {
   }
 
   todoApicall = () => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then((res) => res.json())
-      .then((json) => {
-        console.log(json);
-        this.setState({
-          todosdata: json,
-        });
+    fetch('https://jsonplaceholder.typicode.com/users').then(async (res) => {
+      let json_t = await res.json();
+      console.log(json_t);
+      let new_text = await res.text();
+      // console.log(await res.json());
+      console.log(new_text);
+      this.setState({
+        todosdata: json_t,
       });
+    });
   };
 
   incrementMe = () => {};

@@ -9,4 +9,4 @@ import Crud from './Crud';
 import Login from './Login';
 import Reducer from './Reducer';
 
-ReactDOM.render(<Reducer />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
