@@ -49,6 +49,7 @@ export default function Crud() {
           : { ...old_user };
       })
     );
+    setUser({ name: '', id: '' });
   };
 
   return (
